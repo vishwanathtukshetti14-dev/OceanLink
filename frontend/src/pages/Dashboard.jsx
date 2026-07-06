@@ -39,7 +39,7 @@ function Dashboard() {
   // ======================
   const fetchContacts = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/contacts");
+      const response = await fetch("https://oceanlink-backend.onrender.com/api/contacts");
       const data = await response.json();
       setContacts(data);
     } catch (error) {
@@ -52,7 +52,7 @@ function Dashboard() {
   // ======================
   const fetchShipments = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/shipments");
+      const response = await fetch("https://oceanlink-backend.onrender.com/api/shipments");
       const data = await response.json();
       setShipments(data);
     } catch (error) {
@@ -67,7 +67,7 @@ function Dashboard() {
     if (!window.confirm("Delete this contact?")) return;
 
     try {
-      await fetch(`http://localhost:5000/api/contact/${id}`, {
+      await fetch(`https://oceanlink-backend.onrender.com/api/contact/${id}`, {
         method: "DELETE",
       });
 
@@ -84,7 +84,7 @@ function Dashboard() {
     if (!window.confirm("Delete this shipment?")) return;
 
     try {
-      await fetch(`http://localhost:5000/api/shipment/${id}`, {
+      await fetch(`https://oceanlink-backend.onrender.com/api/shipment/${id}`, {
         method: "DELETE",
       });
 
@@ -113,7 +113,7 @@ function Dashboard() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5000/api/shipment", {
+      const response = await fetch("https://oceanlink-backend.onrender.com/api/shipment", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

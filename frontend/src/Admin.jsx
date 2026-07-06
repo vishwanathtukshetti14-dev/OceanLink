@@ -5,7 +5,7 @@ function Admin() {
 
   // Fetch all contacts
   const fetchContacts = () => {
-    fetch("http://localhost:5000/api/contacts")
+    fetch("https://oceanlink-backend.onrender.com/api/contacts")
       .then((res) => res.json())
       .then((data) => setContacts(data))
       .catch((err) => console.error(err));
@@ -25,7 +25,7 @@ function Admin() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/contact/${id}`,
+        `https://oceanlink-backend.onrender.com/api/contact/${id}`,
         {
           method: "DELETE",
         }

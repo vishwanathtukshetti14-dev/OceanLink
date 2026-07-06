@@ -15,7 +15,7 @@ function App() {
   const [userMessage, setUserMessage] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/message")
+    fetch("https://oceanlink-backend.onrender.com/api/message")
       .then((res) => res.json())
       .then((data) => setMessage(data.message))
       .catch((err) => console.log(err));
@@ -25,7 +25,7 @@ function App() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch("https://oceanlink-backend.onrender.com/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

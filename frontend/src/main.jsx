@@ -6,9 +6,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
-import Admin from "./Admin";
 
 import "./index.css";
+import "./styles/global.css";
+import "./styles/home.css";
+import "./styles/login.css";
+import "./styles/dashboard.css";
+import "./styles/tracking.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -20,8 +24,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <Route path="/login" element={<Login />} />
 
   <Route path="/dashboard" element={<Dashboard />} />
-
-  <Route path="/admin" element={<Admin />} />
 
   <Route path="/tracking" element={<Tracking />} />
 

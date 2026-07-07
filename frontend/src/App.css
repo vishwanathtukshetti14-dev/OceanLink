@@ -1100,3 +1100,90 @@ border:2px solid #00c3ff;
 
     margin-bottom:35px;
 }
+/* ============================
+   Mobile Responsive Dashboard
+============================ */
+
+@media (max-width:768px){
+
+.dashboard{
+    padding:15px;
+}
+
+.dashboard-card{
+    width:100%;
+    padding:20px;
+    border-radius:20px;
+}
+
+.dashboard-header h1{
+    font-size:32px;
+    line-height:1.2;
+    text-align:center;
+}
+
+.dashboard-header h2{
+    font-size:26px;
+    text-align:center;
+}
+
+.dashboard-subtitle{
+    font-size:15px;
+    letter-spacing:2px;
+}
+
+.profile-image{
+    width:100px;
+    height:100px;
+}
+
+.dashboard-stats{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.stat-card{
+    width:100%;
+}
+
+.shipment-form{
+    display:flex;
+    flex-direction:column;
+}
+
+.shipment-form input{
+    width:100%;
+}
+
+.shipment-form button{
+    width:100%;
+}
+
+.search-box{
+    width:100%;
+}
+
+/* Table Scroll */
+
+.contact-table{
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap;
+}
+
+.contact-table thead,
+.contact-table tbody{
+    display:table;
+    width:100%;
+}
+
+.message-title{
+    font-size:38px;
+}
+
+.logout-button{
+    width:100%;
+}
+
+}

@@ -1,0 +1,108 @@
+/* ==========================================
+   TRACKING PAGE
+========================================== */
+
+.tracking-container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+    background:linear-gradient(135deg,#051728,#0b2e4f,#082743);
+}
+
+.tracking-card{
+    width:100%;
+    max-width:700px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border-radius:25px;
+    padding:40px;
+    text-align:center;
+    box-shadow:0 20px 40px rgba(0,0,0,.3);
+}
+
+.tracking-title{
+    font-size:42px;
+    color:white;
+    margin-bottom:30px;
+}
+
+.shipment-card{
+    margin-top:35px;
+    background:rgba(255,255,255,.06);
+    border-radius:20px;
+    padding:25px;
+    text-align:left;
+}
+
+.shipment-card h2{
+    margin-bottom:20px;
+    color:#00bfff;
+}
+
+.shipment-card p{
+    margin:12px 0;
+}
+
+.status-badge{
+    margin-left:10px;
+    padding:6px 14px;
+    border-radius:30px;
+    color:white;
+    font-size:14px;
+    font-weight:600;
+}
+
+.status-delivered{
+    background:#2ecc71;
+}
+
+.status-pending{
+    background:#f39c12;
+}
+
+.status-transit{
+    background:#3498db;
+}
+
+/* ========== MOBILE ========== */
+
+@media(max-width:768px){
+
+.tracking-card{
+    padding:20px;
+}
+
+.tracking-title{
+    font-size:30px;
+}
+
+.search-box{
+    width:100%;
+}
+
+.login-button{
+    width:100%;
+}
+
+.shipment-card{
+    padding:20px;
+}
+
+.shipment-card h2{
+    font-size:24px;
+}
+
+.shipment-card p{
+    font-size:15px;
+    word-break:break-word;
+}
+
+.status-badge{
+    display:inline-block;
+    margin-top:8px;
+    margin-left:0;
+}
+
+}

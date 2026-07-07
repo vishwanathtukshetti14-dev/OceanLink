@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 
-import "../App.css";
+import "../styles/dashboard.css";
 
 function Dashboard() {
 
@@ -300,8 +300,9 @@ function Dashboard() {
         />
                 {/* ================= Contact Table ================= */}
 
-        <table className="contact-table">
+        <div className="table-wrapper">
 
+<table className="contact-table">
           <thead>
             <tr>
               <th>Name</th>
@@ -347,6 +348,7 @@ function Dashboard() {
           </tbody>
 
         </table>
+        </div>
 
         {/* ================= Shipment Table ================= */}
 
@@ -354,7 +356,9 @@ function Dashboard() {
           Shipment List
         </h2>
 
-        <table className="contact-table">
+        <div className="table-wrapper">
+
+<table className="shipment-table">
 
           <thead>
             <tr>
@@ -404,6 +408,7 @@ function Dashboard() {
           </tbody>
 
         </table>
+        </div>
 
         <button
           className="logout-button"

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../App.css";
+import "../styles/tracking.css";
 
 function Tracking() {
 
@@ -35,12 +35,13 @@ function Tracking() {
 
   return (
 
-    <div className="dashboard">
+   <div className="tracking-container">
 
-      <div className="dashboard-card">
+  <div className="tracking-card">
 
-        <h1>🚢 Track Shipment</h1>
-
+    <h1 className="tracking-title">
+      🚢 Track Shipment
+    </h1>
         <input
           type="text"
           placeholder="Enter Shipment ID"

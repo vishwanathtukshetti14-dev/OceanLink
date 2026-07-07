@@ -1,0 +1,228 @@
+/* ==========================
+   GOOGLE FONT
+========================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Poppins",sans-serif;
+    background:#071d34;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+button{
+    font-family:inherit;
+    cursor:pointer;
+    transition:.3s;
+    border:none;
+}
+
+input,
+textarea,
+select{
+    font-family:inherit;
+    outline:none;
+}
+
+ul{
+    list-style:none;
+}
+
+/* ==========================
+   COMMON CONTAINER
+========================== */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* ==========================
+   SECTION SPACING
+========================== */
+
+section{
+    padding:80px 0;
+}
+
+/* ==========================
+   HEADINGS
+========================== */
+
+h1{
+    font-size:56px;
+    font-weight:700;
+}
+
+h2{
+    font-size:40px;
+    font-weight:700;
+}
+
+h3{
+    font-size:28px;
+}
+
+p{
+    line-height:1.8;
+    color:#d8d8d8;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.primary-btn{
+
+    background:#00bfff;
+    color:#fff;
+    padding:14px 35px;
+    border-radius:50px;
+    font-size:17px;
+    font-weight:600;
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-3px);
+
+    background:#009fd9;
+
+}
+
+.secondary-btn{
+
+    background:transparent;
+    color:#fff;
+    border:2px solid #00bfff;
+    padding:14px 35px;
+    border-radius:50px;
+    font-size:17px;
+    font-weight:600;
+
+}
+
+.secondary-btn:hover{
+
+    background:#00bfff;
+
+}
+
+/* ==========================
+   CARD
+========================== */
+
+.card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:20px;
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#00bfff;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#082743;
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+section{
+
+padding:60px 20px;
+
+}
+
+.container{
+
+width:95%;
+
+}
+
+h1{
+
+font-size:38px;
+
+}
+
+h2{
+
+font-size:30px;
+
+}
+
+h3{
+
+font-size:22px;
+
+}
+
+.primary-btn,
+.secondary-btn{
+
+width:100%;
+
+margin-top:15px;
+
+}
+
+}

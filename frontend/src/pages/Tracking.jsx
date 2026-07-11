@@ -2,18 +2,15 @@ import { useState } from "react";
 import "../styles/tracking.css";
 
 function Tracking() {
-
   const [shipmentId, setShipmentId] = useState("");
   const [shipment, setShipment] = useState(null);
   const [error, setError] = useState("");
 
   const handleTrack = async () => {
-
     setError("");
     setShipment(null);
 
     try {
-
       const response = await fetch(
         `https://oceanlink-backend.onrender.com/api/shipment/${shipmentId}`
       );
@@ -26,22 +23,16 @@ function Tracking() {
       }
 
       setShipment(data);
-
     } catch (err) {
       setError("Server Error");
     }
-
   };
 
   return (
+    <div className="tracking-container">
+      <div className="tracking-card">
+        <h1 className="tracking-title">🚢 Track Shipment</h1>
 
-   <div className="tracking-container">
-
-  <div className="tracking-card">
-
-    <h1 className="tracking-title">
-      🚢 Track Shipment
-    </h1>
         <input
           type="text"
           placeholder="Enter Shipment ID"
@@ -50,72 +41,109 @@ function Tracking() {
           className="search-box"
         />
 
-        <br /><br />
+        <br />
+        <br />
 
-        <button
-          className="login-button"
-          onClick={handleTrack}
-        >
+        <button className="login-button" onClick={handleTrack}>
           Track Shipment
         </button>
 
-        <br /><br />
+        <br />
+        <br />
 
-        {error && (
-          <h3 style={{ color: "red" }}>
-            {error}
-          </h3>
-        )}
+        {error && <h3 style={{ color: "red" }}>{error}</h3>}
 
         {shipment && (
-
           <div className="shipment-card">
-
             <h2>Shipment Details</h2>
 
-            <p><b>Shipment ID:</b> {shipment.shipmentId}</p>
-
-            <p><b>Container:</b> {shipment.containerNo}</p>
-
-            <p><b>Origin:</b> {shipment.origin}</p>
-
-            <p><b>Destination:</b> {shipment.destination}</p>
+            <p>
+              <b>Shipment ID:</b> {shipment.shipmentId}
+            </p>
 
             <p>
-  <b>Status:</b>
-
-  <span
-    className={
-      shipment.status === "Delivered"
-        ? "status-badge status-delivered"
-        : shipment.status === "Pending"
-        ? "status-badge status-pending"
-        : "status-badge status-transit"
-    }
-  >
-    {shipment.status}
-  </span>
-</p>
+              <b>Container:</b> {shipment.containerNo}
+            </p>
 
             <p>
-  <b>Expected Delivery:</b>{" "}
-  {new Date(shipment.expectedDelivery).toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  })}
-</p>
+              <b>Origin:</b> {shipment.origin}
+            </p>
 
+            <p>
+              <b>Destination:</b> {shipment.destination}
+            </p>
+
+            <p>
+              <b>Status:</b>{" "}
+              <span
+                className={
+                  shipment.status === "Delivered"
+                    ? "status-badge status-delivered"
+                    : shipment.status === "Pending"
+                    ? "status-badge status-pending"
+                    : "status-badge status-transit"
+                }
+              >
+                {shipment.status}
+              </span>
+            </p>
+
+            <p>
+              <b>Expected Delivery:</b>{" "}
+              {new Date(shipment.expectedDelivery).toLocaleDateString(
+                "en-GB",
+                {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                }
+              )}
+            </p>
+
+            {/* ===== Shipment Timeline ===== */}
+            <h3 style={{ marginTop: "30px", color: "#00bfff" }}>
+  Shipment Progress
+</h3>
+
+            <div className="timeline">
+              <div
+                className={`timeline-step ${
+                  ["Pending", "In Transit", "Delivered"].includes(
+                    shipment.status
+                  )
+                    ? "active"
+                    : ""
+                }`}
+              >
+                <div className="circle">📦</div>
+                <p>Booked</p>
+              </div>
+
+              <div
+                className={`timeline-step ${
+                  ["In Transit", "Delivered"].includes(shipment.status)
+                    ? "active"
+                    : ""
+                }`}
+              >
+                <div className="circle">🚢</div>
+                <p>In Transit</p>
+              </div>
+
+              <div
+                className={`timeline-step ${
+                  shipment.status === "Delivered" ? "active" : ""
+                }`}
+              >
+                <div className="circle">🏠</div>
+                <p>Delivered</p>
+              </div>
+            </div>
           </div>
-
         )}
-
       </div>
-
     </div>
-
   );
-
 }
 
 export default Tracking;
